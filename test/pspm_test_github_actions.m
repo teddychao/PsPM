@@ -82,4 +82,8 @@ function pspm_test_github_actions(varargin)
 
 	full_suite = [suite, import_suite, chantype_suite];
 	disp('===Plain script works.===');
+	
+	[pth, ~, ~] = fileparts(which('pspm_test.m'));
+	addpath(pth);
+	pspm_init;
 end
