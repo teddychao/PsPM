@@ -16,6 +16,6 @@ vendor/
 # Ignore all the MATLAB files
 *.MATLABDriveTag
 *.asv
-*.mat
+# *.mat
 *.html
 !pspm_App.mat
