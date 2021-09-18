@@ -16,6 +16,9 @@ vendor/
 # Ignore all the MATLAB files
 *.MATLABDriveTag
 *.asv
-# *.mat
+*.mat
 *.html
 !pspm_App.mat
+
+# Force upload all files in ImportTestData
+!/ImportTestData/*   
