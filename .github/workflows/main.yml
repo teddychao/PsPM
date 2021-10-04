@@ -12,16 +12,16 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
-			- name: Display structure of downloaded files
-  				run: ls -R
+      - name: Display structure of downloaded files
+        run: ls -R
       - name: Run script
         uses: matlab-actions/run-command@v1
         with:
           command: addpath('test'), addpath('src'), pspm_test_github_actions
       - uses: actions/checkout@v2
-			- uses: actions/download-artifact@v2
-				with:
-    			name: my-artifact
+      - uses: actions/download-artifact@v2
+        with:
+          name: my-artifact
       #- run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       #- run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
       #- run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
