@@ -35,11 +35,3 @@ jobs:
           test-results-junit: results.xml
           
       - run: echo "This job's status is ${{ job.status }}."
-      
-      - name: Check on success
-        if: 'success' ==  'success'
-        run: exit 0
-      
-      - name: Check on failures
-        if: 'success' !=  'success'
-        run: exit 1
