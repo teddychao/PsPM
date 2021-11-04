@@ -49,6 +49,9 @@ jobs:
         if: steps.check_status.outputs.files_exists == 'true'
         run: exit 0
         
+      - run: echo "This running status is ${{ steps.check_status.outputs.files_exists }}."
+      - run: echo "This running status is ${{ steps.check_status.outputs.files_exists != 'true' }}."
+      
       - name: Return running failure
         if: steps.check_status.outputs.files_exists != 'true'
         run: exit 1
