@@ -26,8 +26,11 @@ jobs:
         uses: matlab-actions/run-command@v1
         with:
           command: addpath('test'), addpath('src'), test_status = pspm_test_github_actions
-      - run: echo "This matlab test's status is step.pspm_test_main.outcome."
+      - run: echo "This matlab test's status is ${{ step.pspm_test_main.conclusion }}."
       - run: echo "This job's status is ${{ job.status }}."
+      - name: Check on success
+        if: test_status ==  'success'
+        run: exit 0
       - name: Check on failures
-        if: steps.pspm_test_main.outcome.status !=  'success'
+        if: test_status !=  'success'
         run: exit 1
