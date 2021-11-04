@@ -45,9 +45,11 @@ jobs:
         with:
           files: "success.txt"
           
-      - name: Return running status
+      - name: Return running success
         if: steps.check_status.outputs.files_exists == 'true'
         run: exit 0
+        
+      - name: Return running failure
         if: steps.check_status.outputs.files_exists != 'true'
         run: exit 1
           
