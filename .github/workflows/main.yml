@@ -39,23 +39,32 @@ jobs:
         with:
           command: addpath('test'), addpath('src'), pspm_test_github_actions
           
+      - name: List files in the repository
+        run: ls ${{ github.workspace }}
+            
       - name: Check status
         id: check_status
         uses: andstor/file-existence-action@v1
         with:
           files: "success.txt"
+      - name: List files in the repository
+        run: ls ${{ github.workspace }}
+      
+      - run: echo "This running status is ${{ steps.check_status.outputs.files_exists }}."
+      - run: echo "This running status is ${{ steps.check_status.outputs.files_exists != 'true' }}."
           
       - name: Return running success
         if: steps.check_status.outputs.files_exists == 'true'
         run: exit 0
         
-      - run: echo "This running status is ${{ steps.check_status.outputs.files_exists }}."
-      - run: echo "This running status is ${{ steps.check_status.outputs.files_exists != 'true' }}."
+      - name: List files in the repository
+        run: ls ${{ github.workspace }}
       
       - name: Return running failure
         if: steps.check_status.outputs.files_exists != 'true'
         run: exit 1
-          
+      - name: List files in the repository
+        run: ls ${{ github.workspace }}    
       # - run: echo "This job's status is ${{ job.status }}."
       
       
