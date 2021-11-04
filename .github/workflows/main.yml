@@ -52,6 +52,9 @@ jobs:
       
       - run: echo "This running status is ${{ steps.check_status.outputs.files_exists }}."
       - run: echo "This running status is ${{ steps.check_status.outputs.files_exists != 'true' }}."
+      
+      - name: Display structure of downloaded files
+        run: ls -R
           
       - name: Return running success
         if: steps.check_status.outputs.files_exists == 'true'
