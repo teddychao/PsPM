@@ -1,4 +1,4 @@
-function status = pspm_test_github_actions(varargin)
+function pspm_test_github_actions(varargin)
     %% pspm_test is a wrapper script for testing all testable functions in one
     % - to be used before any release.
     %
@@ -113,10 +113,12 @@ function status = pspm_test_github_actions(varargin)
 
     if success
         disp('pspm_test: All tests have passed!');
-        status = 'success';
+        fid = fopen('success.txt', 'wt');
+        fclose(fid);
     else
         disp('pspm_test: Some tests have failed!');
-        status = 'failure';
+        fid = fopen('failure.txt', 'wt');
+        fclose(fid);
     end
 
     disp('===TEST_STATISTICS_BEGIN===');
