@@ -31,7 +31,7 @@ jobs:
         id: status_var
         run: echo ::set-output name=docker_tag::"success"
         
-        - run: echo "This step status is ${{ steps.status_var.outputs.status_var }}."
+      - run: echo "This step status is ${{ steps.status_var.outputs.status_var }}."
       
       - name: Run script
         id: pspm_test_main
