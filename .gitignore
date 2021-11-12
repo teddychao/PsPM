@@ -20,6 +20,3 @@ vendor/
 *.mat
 *.html
 !pspm_App.mat
-
-# Force upload all files in ImportTestData
-!/ImportTestData/*   
