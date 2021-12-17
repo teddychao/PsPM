@@ -11,7 +11,7 @@ jobs:
       - name: Checkout private tools
         uses: actions/checkout@v2
         with:
-          repository: teddychao/PsPM-data-priv
+          repository: bachlab/PsPM-data
           token: ${{ github.token }}
           #'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' # `GH_PAT` is a secret that contains your PAT
-          path: Import
+          path: ImportTestData
