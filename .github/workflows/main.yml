@@ -13,4 +13,4 @@ jobs:
         with:
           repository: teddychao/PsPM-data-priv
           #token: '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' # `GH_PAT` is a secret that contains your PAT
-          #path: Import
+          path: Import
