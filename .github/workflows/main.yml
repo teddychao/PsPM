@@ -8,6 +8,8 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v2
       
+      - run: echo "The secret is ${{ secrets.MY_REPO_PAT }} ."
+      
       - name: Checkout private tools
         uses: actions/checkout@v2
         with:
